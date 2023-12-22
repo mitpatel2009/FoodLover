@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../CssFile/style.css" />
+    <title>Food Lovers</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="logo">Food Lovers</h1>
+
+      <div class="container">
+        <nav>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="recipies.html">Recipies</a></li>
+            <li><a href="#">Calories</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <h1 class="meal_h1">Eat Smart, Stay Informed</h1>
+    <div class="form">
+      <input
+        type="text"
+        name="text"
+        autocomplete="off"
+        placeholder="Ex- Pizza"
+        id="nutrition_input"
+        required
+      />
+      <button id="nutrition_button">Submit</button>
+    </div>
+    <!-- Add this HTML for the loading screen -->
+    <div id="loading-screen" class="hidden">
+      <div class="loader"></div>
+    </div>
+
+    <div id="table-container"></div>
+
+    <script src="../JSFiles/calories.js"></script>
+  </body>
+</html>

@@ -1,0 +1,84 @@
+function meal_planner() {
+  
+
+  fetch(meal_url)
+    .then((resp) => {
+      if (!resp.ok) {
+        throw new Error(`HTTP error! Status: ${resp.status}`);
+      }
+      return resp.json();
+    })
+    .then((meal_data) => {
+      displayRecipes(meal_data);
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      // Handle the error here, e.g., display an error message to the user
+    });
+}
+
+function displayRecipes(recipes) {
+  // Clear any previous results
+  const dietResults = document.querySelector(".diet_results");
+  dietResults.innerHTML = "";
+
+  // Process and display the data as needed
+  recipes.forEach((recipe) => {
+    // Customize how you want to display each recipe
+    const recipeElement = document.createElement("div");
+    recipeElement.classList.add("recipe-item");
+    recipeElement.innerHTML = `
+      <h2>${recipe.title}</h2>
+      <img src="${recipe.image}" alt="${recipe.title}">
+    `;
+    dietResults.appendChild(recipeElement);
+  });
+}
+
+const mealPlaner_btn = document.getElementById("submit_btn");
+mealPlaner_btn.addEventListener("click", meal_planner);
+submit_btn.onclick = mealcallingapi;
+
+
+
+
+
+
+
+
+<!-- HTML !-->
+<button class="button-56" role="button">Button 56</button>
+
+/* CSS */
+
+      <br />
+      <input type="text" placeholder="Enter Ingredients..." id="search" />
+      <button id="submit_btn">Search</button>
+    </form>
+
+
+
+               <h3>${recipe.recipe.label}</h3>
+            <ul>
+                ${recipe.recipe.ingredientLines
+                  .map((ingredient) => `<li>${ingredient}</li>`)
+                  .join("")}
+            </ul>
+            <a href="${recipe.recipe.url}" target="_blank">View Recipe</a>
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food Lover's Paradise</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Food Lover's Paradise</h1>
+    </header>
+    
+</body>
+</html>
